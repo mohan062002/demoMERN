@@ -17,6 +17,7 @@ app.use(express.json());//setting middleware for json
 app.use(cookieParser());//setting middleware for cookies
 app.use('/uploads',express.static(__dirname+'/uploads'));//setting up middileware to access images downloaded by "image-downloader"
 const BASE_URL=process.env.BASE_URL;
+const PORT=process.env.PORT || 5000;
 
 
 const corsOptions = {
@@ -168,8 +169,8 @@ app.post('/photos',async(req,res)=>{
 
 
 
-app.listen(5000, () => {
-  console.log("listening port from 8000");
+app.listen(PORT, () => {
+  console.log("listening port 5000");
 });
 
 
