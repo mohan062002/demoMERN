@@ -16,11 +16,11 @@ const jwtSecret='iworirjwkngkeajngoiut';
 app.use(express.json());//setting middleware for json
 app.use(cookieParser());//setting middleware for cookies
 app.use('/uploads',express.static(__dirname+'/uploads'));//setting up middileware to access images downloaded by "image-downloader"
-const allowedOrigin = process.env.ACCESS_CONTROL_ALLOW_ORIGIN || '';
+
 const PORT=process.env.PORT || 5000;
 
 const corsOptions = {
-  origin:allowedOrigin, //access-control-allow-origin
+  origin:process.env.ACCESS_CONTROL_ALLOW_ORIGIN, //access-control-allow-origin
   credentials: true, //access-control-allow-credentials:tru
   optionSuccessStatus: 200,
 };
