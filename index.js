@@ -16,13 +16,15 @@ const app = express();
 const bcryptSalt = bcrypt.genSaltSync(10);
 const jwtSecret = "iworirjwkngkeajngoiut";
 
-app.use(express.json()); //setting middleware for json
-app.use(cookieParser()); //setting middleware for cookies
-app.use("/uploads", express.static(__dirname + "/uploads")); //setting up middileware to access images downloaded by "image-downloader"
+app.use(express.json());//setting middleware for json
+app.use(cookieParser());//setting middleware for cookies
+app.use('/uploads',express.static(__dirname+'/uploads'));//setting up middileware to access images downloaded by "image-downloader"
+const BASE_URL=process.env.BASE_URL;
+const PORT=process.env.PORT || 5000;
 
-const BASE_URL=process.env.BASE_URL||"";
+
 const corsOptions = {
-  origin:BASE_URL,
+  origin:BASE_URL, //access-control-allow-origin
   credentials: true, //access-control-allow-credentials:tru
   optionSuccessStatus: 200,
 };
