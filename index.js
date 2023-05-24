@@ -24,7 +24,7 @@ const PORT=process.env.PORT || 5000;
 
 
 const corsOptions = {
-  origin:BASE_URL, //access-control-allow-origin
+  origin:"https://effervescent-tapioca-a7fe48.netlify.app/", //access-control-allow-origin
   credentials: true, //access-control-allow-credentials:tru
   optionSuccessStatus: 200,
 };
