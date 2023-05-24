@@ -23,11 +23,10 @@ const BASE_URL=process.env.BASE_URL;
 const PORT=process.env.PORT || 5000;
 
 
-
-
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://effervescent-tapioca-a7fe48.netlify.app');
+  res.header('Access-Control-Allow-Origin', 'https://effervescent-tapioca-a7fe48.netlify.app/');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Credentials', 'true'); // Set 'Access-Control-Allow-Credentials' to 'true'
   next();
 });
 
