@@ -144,11 +144,12 @@ app.post("/registerPlace", (req, res) => {
 });
 
 //creating a storage for multer
+const UploadPath="https://github.com/mohan062002/demoMERN/tree/main/uploads"
 const storage = multer.diskStorage({
   //assigning the destination of a file
   destination: (req, file, cb) => {
     //cb stands for callback
-    cb(null, "uploads");
+    cb(null,UploadPath);
   },
   //setting the name of a file
   filename: (req, file, cb) => {
